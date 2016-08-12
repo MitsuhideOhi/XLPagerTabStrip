@@ -57,9 +57,16 @@ public class SpotifyExampleViewController: ButtonBarPagerTabStripViewController 
     // MARK: - PagerTabStripDataSource
     
     public override func viewControllersForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let child_1 = TableChildExampleViewController(style: .Plain, itemInfo: IndicatorInfo(title: "FRIENDS"))
+        let string: NSMutableAttributedString = NSMutableAttributedString.init(string: "FRIENDS")
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named:"Otto_Mann")
+        attachment.bounds = CGRect(x: 0, y: -2, width: 15, height: 15)
+        string.insertAttributedString(NSAttributedString(attachment: attachment), atIndex: 0)
+        
+        
+        let child_1 = TableChildExampleViewController(style: .Plain, itemInfo: IndicatorInfo(title: string))
         child_1.blackTheme = true
-        let child_2 = TableChildExampleViewController(style: .Plain, itemInfo: IndicatorInfo(title: "FEATURED"))
+        let child_2 = TableChildExampleViewController(style: .Plain, itemInfo: IndicatorInfo(title: NSAttributedString.init(string: "FEATURED")))
         child_2.blackTheme = true
         return [child_1, child_2]
     }

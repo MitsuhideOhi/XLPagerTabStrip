@@ -72,7 +72,7 @@ public class ButtonBarPagerTabStripViewController: PagerTabStripViewController, 
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = self?.settings.style.buttonBarItemFont
-        label.text = childItemInfo.title
+        label.attributedText = childItemInfo.title
         let labelSize = label.intrinsicContentSize()
         return labelSize.width + (self?.settings.style.buttonBarItemLeftRightMargin ?? 8) * 2
     })
@@ -270,7 +270,7 @@ public class ButtonBarPagerTabStripViewController: PagerTabStripViewController, 
         let childController = viewControllers[indexPath.item] as! IndicatorInfoProvider
         let indicatorInfo = childController.indicatorInfoForPagerTabStrip(self)
         
-        cell.label.text = indicatorInfo.title
+        cell.label.attributedText = indicatorInfo.title
         cell.label.font = settings.style.buttonBarItemFont ?? cell.label.font
         cell.label.textColor = settings.style.buttonBarItemTitleColor ?? cell.label.textColor
         cell.contentView.backgroundColor = settings.style.buttonBarItemBackgroundColor ?? cell.contentView.backgroundColor

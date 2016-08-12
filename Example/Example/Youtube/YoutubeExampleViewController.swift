@@ -71,9 +71,9 @@ class YoutubeExampleViewController: BaseButtonBarPagerTabStripViewController<You
     // MARK: - PagerTabStripDataSource
     
     override func viewControllersForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let child_1 = TableChildExampleViewController(style: .Plain, itemInfo: IndicatorInfo(title: " HOME", image: UIImage(named: "home")))
-        let child_2 = TableChildExampleViewController(style: .Plain, itemInfo: IndicatorInfo(title: " TRENDING", image: UIImage(named: "trending")))
-        let child_3 = ChildExampleViewController(itemInfo: IndicatorInfo(title: " ACCOUNT", image: UIImage(named: "profile")))
+        let child_1 = TableChildExampleViewController(style: .Plain, itemInfo: IndicatorInfo(title: NSAttributedString.init(string: "HOME"), image: UIImage(named: "home")))
+        let child_2 = TableChildExampleViewController(style: .Plain, itemInfo: IndicatorInfo(title: NSAttributedString.init(string: "TRENDING"), image: UIImage(named: "trending")))
+        let child_3 = ChildExampleViewController(itemInfo: IndicatorInfo(title: NSAttributedString.init(string: "ACCOUNT"), image: UIImage(named: "profile")))
         return [child_1, child_2, child_3]
     }
     
@@ -89,7 +89,7 @@ class YoutubeExampleViewController: BaseButtonBarPagerTabStripViewController<You
             let child = viewControllers[toIndex] as! IndicatorInfoProvider
             UIView.performWithoutAnimation({ [weak self] () -> Void in
                 guard let me = self else { return }
-                me.navigationItem.leftBarButtonItem?.title =  child.indicatorInfoForPagerTabStrip(me).title
+                me.navigationItem.leftBarButtonItem?.title =  child.indicatorInfoForPagerTabStrip(me).title.string
             })
         }
     }
