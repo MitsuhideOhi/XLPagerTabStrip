@@ -82,7 +82,7 @@ open class SegmentedPagerTabStripViewController: PagerTabStripViewController, Pa
                 segmentedControl.insertSegment(with: image, at: index, animated: false)
             }
             else {
-                segmentedControl.insertSegment(withTitle: child.indicatorInfo(for: self).title, at: index, animated: false)
+                segmentedControl.insertSegment(withTitle: child.indicatorInfo(for: self).title.string, at: index, animated: false)
             }
         }
         segmentedControl.selectedSegmentIndex = currentIndex

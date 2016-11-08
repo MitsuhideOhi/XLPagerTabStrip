@@ -330,14 +330,14 @@ open class ExampleBaseButtonBarPagerTabStripViewController: BaseButtonBarPagerTa
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.font = self?.settings.style.buttonBarItemFont ?? label.font
-            label.text = childItemInfo.title
+            label.attributedText = childItemInfo.title
             let labelSize = label.intrinsicContentSize
             return labelSize.width + CGFloat(self?.settings.style.buttonBarItemLeftRightMargin ?? 8 * 2)
             })
     }
 
     open override func configure(cell: ButtonBarViewCell, for indicatorInfo: IndicatorInfo){
-        cell.label.text = indicatorInfo.title
+        cell.label.attributedText = indicatorInfo.title
         if let image = indicatorInfo.image {
             cell.imageView.image = image
         }

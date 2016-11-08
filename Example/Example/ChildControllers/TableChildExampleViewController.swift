@@ -29,7 +29,7 @@ class TableChildExampleViewController: UITableViewController, IndicatorInfoProvi
     
     let cellIdentifier = "postCell"
     var blackTheme = false
-    var itemInfo = IndicatorInfo(title: "View")
+    var itemInfo = IndicatorInfo(title: NSAttributedString.init(string: "View"))
     
     init(style: UITableViewStyle, itemInfo: IndicatorInfo) {
         self.itemInfo = itemInfo

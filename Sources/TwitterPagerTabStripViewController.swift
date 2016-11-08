@@ -179,7 +179,7 @@ open class TwitterPagerTabStripViewController: PagerTabStripViewController, Page
             let indicatorInfo = child.indicatorInfo(for: self)
             let navTitleLabel : UILabel = {
                 let label = UILabel()
-                label.text = indicatorInfo.title
+                label.attributedText = indicatorInfo.title
                 label.font = UIApplication.shared.statusBarOrientation.isPortrait ? settings.style.portraitTitleFont : settings.style.landscapeTitleFont
                 label.textColor = settings.style.titleColor
                 label.alpha = 0
